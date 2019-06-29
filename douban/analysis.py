@@ -4,7 +4,7 @@ import re
 import pandas as pd
 import numpy as np
 import  matplotlib.pyplot
-import self as self
+# import self as self
 from matplotlib import pyplot as plt
 
 plt.rcParams['font.sans-serif'] = ['SimHei']
@@ -71,8 +71,22 @@ def paint(movie):
                 num[int(n) - 1] += 1
         except TypeError:
             continue
-    plt.bar(range(1, 13), num)
-    plt.title('2018 movie release time map')
+    # x = ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']
+    # width = 0.5
+    # idx = np.arange(len(x))
+    # plt.bar(idx,num,width,color='green',label='电影柱状图')
+
+    plt.bar(range(1, 13), num, color='green')
+    plt.title('2018电影发布时间图')
+    plt.xlabel('月份')
+    plt.ylabel('电影数量')
+
+    # X = np.arange(12)
+    # Y = (1-X/float(12)*np.random.uniform(0.5,1.0,12))
+    # for x,y in zip(X,Y):
+    #     plt.text(x+0.05,y+0.05,'%.2f' %y, ha='center',va='bottom')
+
+
     plt.show()
 
 def main():
